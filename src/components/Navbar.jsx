@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BurgerButton from "./BurgerButton";
+import CartWidget from "./CartWidget";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
@@ -11,29 +15,22 @@ function Navbar() {
     <>
       <NavContainer>
         <h2>
-          Navbar <span>Responsive</span>
+          Travel<span>fy </span>
+          <FontAwesomeIcon icon={faPlaneDeparture} size="lg" color="white" />
         </h2>
         <div className={`links ${clicked ? "active" : ""}`}>
-          <a onClick={handleClick} href="#h">
-            Inicio
-          </a>
-          <a onClick={handleClick} href="#h">
-            Compras
-          </a>
-          <a onClick={handleClick} href="#h">
-            About
-          </a>
-          <a onClick={handleClick} href="#h">
-            Contacto
-          </a>
-          <a onClick={handleClick} href="#h">
-            Sucursales
-          </a>
+          <a href="#h">Inicio</a>
+          <a href="#h">Reservas</a>
+          <a href="#h">About</a>
+          <a href="#h">Contacto</a>
+          <a href="#h">Dónde alojarse</a>
+          <a href="#h">Agencias</a>
         </div>
         <div className="burger">
           <BurgerButton clicked={clicked} handleClick={handleClick} />
         </div>
         <BgDiv className={`initial ${clicked ? " active" : ""}`}></BgDiv>
+        <CartWidget />
       </NavContainer>
       ;
     </>
@@ -51,7 +48,7 @@ const NavContainer = styled.nav`
     }
   }
   padding: 0.4rem;
-  background-color: #333;
+  background: linear-gradient(#a73737, #7a2828);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,7 +73,7 @@ const NavContainer = styled.nav`
 
     @media (min-width: 768px) {
       position: initial;
-      margin: 0;
+      margin-right: 0;
       a {
         font-size: 1rem;
         color: white;
