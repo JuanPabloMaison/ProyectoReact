@@ -32,7 +32,6 @@ function Navbar() {
         <BgDiv className={`initial ${clicked ? " active" : ""}`}></BgDiv>
         <CartWidget />
       </NavContainer>
-      ;
     </>
   );
 }
