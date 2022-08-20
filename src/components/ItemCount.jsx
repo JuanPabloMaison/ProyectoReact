@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Button from "@mui/material/Button";
 
 const ItemCount = ({ onAdd, initial, stock }) => {
   const [cantidad, setCantidad] = useState(initial);
@@ -10,21 +11,23 @@ const ItemCount = ({ onAdd, initial, stock }) => {
     <ItemContainer>
       <div className="count-container">
         <div className="count-container_contador">
-          <button
-            className="count-container_button"
+          <Button
+            variant="contained"
             onClick={() => añadirProducto(-1)}
             disabled={cantidad === initial}
+            className="count-container_button"
           >
             -
-          </button>
+          </Button>
           <span className="count-container_cantidad">{cantidad}</span>
-          <button
-            className="count-container_button"
+          <Button
+            variant="contained"
             onClick={() => añadirProducto(+1)}
             disabled={cantidad === stock}
+            className="count-container_button"
           >
             +
-          </button>
+          </Button>
         </div>
         <button
           className="button-primary"
