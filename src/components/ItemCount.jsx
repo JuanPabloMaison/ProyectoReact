@@ -29,15 +29,16 @@ const ItemCount = ({ onAdd, initial, stock }) => {
             +
           </Button>
         </div>
-        <button
-          className="button-primary"
+        <Button
+          variant="contained"
           onClick={() => {
             onAdd(cantidad);
           }}
           disabled={stock === 0 ? true : null}
+          className="button-primary"
         >
           Añadir
-        </button>
+        </Button>
       </div>
     </ItemContainer>
   );
