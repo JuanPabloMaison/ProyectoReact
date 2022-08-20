@@ -12,7 +12,7 @@ function App() {
     <>
       <Navbar />
       <ItemListContainer saludo={saludo} />
-      <ItemCount onAdd={onAdd} initial={1} stock={7} />
+      <ItemCount onAdd={onAdd} initial={1} stock={10} />
     </>
   );
 }
